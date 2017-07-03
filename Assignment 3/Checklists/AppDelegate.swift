@@ -25,14 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if let w = window {
-            
             let navigationController = window!.rootViewController as! UINavigationController
             let controller = navigationController.viewControllers[0] as! AllListsViewController
             controller.dataModel = dataModel
             let center = UNUserNotificationCenter.current()
             center.delegate = self
-        }
+            saveData()
+
+
         
         return true
     }
